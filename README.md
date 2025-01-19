@@ -6,4 +6,4 @@ Die Teilnehmer einer EEG können somit in Echtzeit sehen, ob in der EEG ein Leis
 Meine Lösung basiert auf einem Raspberry Pi (ab 1. Generation; Lan Port) mit installiertem Mosquitto MQTT Broker. Die Python Anwendung erstellt die Webseite und eine Logdatei. Es ist weiters eine öffentliche IPv4 mit Weiterleitungen der Ports für MQTT und Webseite auf den Raspberry notwendig.
 Die Teilnehmer übertragen mit unterschiedlichem Topic (amis/user1, amis/user2, usw) an den MQTT Broker.
 
-![amis_eeg](https://github.com/user-attachments/assets/5c83e486-9095-4d77-89ee-306589424393)
+![grafik](https://github.com/user-attachments/assets/f1175a1a-6ba8-4156-86c4-46b2ff7df13c)
