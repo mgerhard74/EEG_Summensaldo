@@ -101,7 +101,7 @@ def subscribe(client: mqtt_client):
         result = json.loads(msg.payload.decode('utf-8'))
         for i in range(1, anz_teilnehmer+1):
             if msg.topic == topic + str(i):
-                saldo[i] = result['saldo']
+                saldo[i] = result['saldo'] if result['saldo'] <= 0 else 0
                 alive[i] = True
                 epoch_time[i] = int(time.time())
     global anz_teilnehmer
