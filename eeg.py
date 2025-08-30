@@ -57,6 +57,11 @@ offline = ""
 zeit = ""
 summensaldo_mw = 60 * [0]
 fifo_summensaldo = deque(maxlen=60)
+Usernames = [""] * (anz_teilnehmer+1)
+
+# read usernames
+for i in range(1, anz_teilnehmer+1):
+    Usernames[i] = config.get('USERS',str(i), fallback=str(i))
 
 
 def send_email(subject, body):
@@ -125,9 +130,9 @@ def mqtt_loop():
         offline = ""
         for i in range(1, anz_teilnehmer+1):
             if not alive[i]:
-                offline += f"{i},"
+                offline += f"{Usernames[i]},"
             elif alive[i]:
-                online += f"{i},"
+                online += f"{Usernames[i]},"
         if len(online) > 0:
             online = online[:-1]
         if len(offline) > 0:
